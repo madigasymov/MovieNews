@@ -7,16 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC056D26250B975100DA4D59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D25250B975100DA4D59 /* Constants.swift */; };
+		DC056D28250BA4D900DA4D59 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D27250BA4D900DA4D59 /* NetworkService.swift */; };
+		DC056D2A250BAA4100DA4D59 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D29250BAA4100DA4D59 /* NetworkDataFetcher.swift */; };
+		DC056D2C250CAB3900DA4D59 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D2B250CAB3900DA4D59 /* Movie.swift */; };
+		DC603D89250CAF250056266D /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC603D88250CAF250056266D /* MovieData.swift */; };
 		DC94F0CC250893CE00CAF6B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94F0CB250893CE00CAF6B2 /* AppDelegate.swift */; };
 		DC94F0D0250893CE00CAF6B2 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94F0CF250893CE00CAF6B2 /* NewsController.swift */; };
 		DC94F0D3250893CE00CAF6B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94F0D1250893CE00CAF6B2 /* Main.storyboard */; };
 		DC94F0D5250893D000CAF6B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC94F0D4250893D000CAF6B2 /* Assets.xcassets */; };
 		DC94F0D8250893D000CAF6B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94F0D6250893D000CAF6B2 /* LaunchScreen.storyboard */; };
-		DC94F0E02509DC4E00CAF6B2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94F0DF2509DC4E00CAF6B2 /* Movie.swift */; };
 		DC94F0E22509E04500CAF6B2 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94F0E12509E04500CAF6B2 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC056D25250B975100DA4D59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC056D27250BA4D900DA4D59 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DC056D29250BAA4100DA4D59 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		DC056D2B250CAB3900DA4D59 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		DC603D88250CAF250056266D /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		DC94F0C8250893CE00CAF6B2 /* MovieNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC94F0CB250893CE00CAF6B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC94F0CF250893CE00CAF6B2 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -24,7 +33,6 @@
 		DC94F0D4250893D000CAF6B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC94F0D7250893D000CAF6B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC94F0D9250893D000CAF6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC94F0DF2509DC4E00CAF6B2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DC94F0E12509E04500CAF6B2 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +47,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC056D2D250CABE100DA4D59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC056D2B250CAB3900DA4D59 /* Movie.swift */,
+				DC603D88250CAF250056266D /* MovieData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DC603D8A250D116F0056266D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DC056D27250BA4D900DA4D59 /* NetworkService.swift */,
+				DC056D29250BAA4100DA4D59 /* NetworkDataFetcher.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DC603D8B250D11A90056266D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC94F0E12509E04500CAF6B2 /* MovieCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC603D8C250D11B60056266D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC94F0CF250893CE00CAF6B2 /* NewsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		DC94F0BF250893CE00CAF6B2 = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				DC94F0CB250893CE00CAF6B2 /* AppDelegate.swift */,
-				DC94F0CF250893CE00CAF6B2 /* NewsController.swift */,
-				DC94F0E12509E04500CAF6B2 /* MovieCell.swift */,
-				DC94F0DF2509DC4E00CAF6B2 /* Movie.swift */,
+				DC056D25250B975100DA4D59 /* Constants.swift */,
+				DC603D8A250D116F0056266D /* Network */,
+				DC056D2D250CABE100DA4D59 /* Models */,
+				DC603D8B250D11A90056266D /* Views */,
+				DC603D8C250D11B60056266D /* Controllers */,
 				DC94F0D1250893CE00CAF6B2 /* Main.storyboard */,
 				DC94F0D4250893D000CAF6B2 /* Assets.xcassets */,
 				DC94F0D6250893D000CAF6B2 /* LaunchScreen.storyboard */,
@@ -141,10 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC056D2A250BAA4100DA4D59 /* NetworkDataFetcher.swift in Sources */,
+				DC056D26250B975100DA4D59 /* Constants.swift in Sources */,
 				DC94F0D0250893CE00CAF6B2 /* NewsController.swift in Sources */,
 				DC94F0CC250893CE00CAF6B2 /* AppDelegate.swift in Sources */,
+				DC603D89250CAF250056266D /* MovieData.swift in Sources */,
 				DC94F0E22509E04500CAF6B2 /* MovieCell.swift in Sources */,
-				DC94F0E02509DC4E00CAF6B2 /* Movie.swift in Sources */,
+				DC056D28250BA4D900DA4D59 /* NetworkService.swift in Sources */,
+				DC056D2C250CAB3900DA4D59 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

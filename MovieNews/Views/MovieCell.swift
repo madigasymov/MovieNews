@@ -10,6 +10,14 @@ import UIKit
 
 class MovieCell: UICollectionViewCell {
     
+    var movie: Movie? {
+        didSet {
+            guard let movie = movie else { return }
+            titleLabel.text = movie.title
+            dateLabel.text = movie.releaseDate
+        }
+    }
+    
     let backdropImageView: UIImageView = {
         let image = UIImage()
         let imageView = UIImageView(image: image)

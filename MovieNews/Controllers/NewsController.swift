@@ -12,6 +12,8 @@ class NewsController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     private let darkBlue = UIColor(red: 13/255, green: 37/255, blue: 63/255, alpha: 1.0)
     private let cellId = "cellId"
+    private var networkDataFetcher = NetworkDataFetcher()
+    var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,20 +25,30 @@ class NewsController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView.backgroundColor = darkBlue
         collectionView.alwaysBounceVertical = true
         collectionView.register(MovieCell.self, forCellWithReuseIdentifier: cellId)
+        
+        networkDataFetcher.fetchMovie(urlString: Const.URL.moviesURL) { (page) in
+            let results = page?.results
+            results?.forEach({ (item) in
+                self.movies.append(Movie(movieData: item)!)
+            })
+        }
+        print(movies.first?.title)
+
     }
+    
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return movies.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MovieCell
-        
-        
+        let movie = movies[indexPath.item]
+        cell.movie = movie
         return cell
     }
     
