@@ -6,9 +6,9 @@
 //  Copyright © 2020 Rustem Madigassymov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct Movie {
+class Movie {
     let id: Int
     let title: String
     let overview: String
@@ -19,7 +19,7 @@ struct Movie {
     
     init?(movieData: MovieData) {
         id = movieData.id
-        title = movieData.original_title
+        title = movieData.title
         overview = movieData.overview
         releaseDate = movieData.release_date
         backdropPath = movieData.backdrop_path

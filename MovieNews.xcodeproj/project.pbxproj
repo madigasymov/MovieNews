@@ -11,6 +11,8 @@
 		DC056D28250BA4D900DA4D59 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D27250BA4D900DA4D59 /* NetworkService.swift */; };
 		DC056D2A250BAA4100DA4D59 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D29250BAA4100DA4D59 /* NetworkDataFetcher.swift */; };
 		DC056D2C250CAB3900DA4D59 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC056D2B250CAB3900DA4D59 /* Movie.swift */; };
+		DC07620C250DFB6300181AB9 /* NewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC07620B250DFB6300181AB9 /* NewsDetailController.swift */; };
+		DC07620E250DFE2500181AB9 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC07620D250DFE2500181AB9 /* MovieDetail.swift */; };
 		DC603D89250CAF250056266D /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC603D88250CAF250056266D /* MovieData.swift */; };
 		DC94F0CC250893CE00CAF6B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94F0CB250893CE00CAF6B2 /* AppDelegate.swift */; };
 		DC94F0D0250893CE00CAF6B2 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94F0CF250893CE00CAF6B2 /* NewsController.swift */; };
@@ -25,6 +27,8 @@
 		DC056D27250BA4D900DA4D59 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DC056D29250BAA4100DA4D59 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		DC056D2B250CAB3900DA4D59 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		DC07620B250DFB6300181AB9 /* NewsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailController.swift; sourceTree = "<group>"; };
+		DC07620D250DFE2500181AB9 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		DC603D88250CAF250056266D /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		DC94F0C8250893CE00CAF6B2 /* MovieNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC94F0CB250893CE00CAF6B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				DC94F0E12509E04500CAF6B2 /* MovieCell.swift */,
+				DC07620D250DFE2500181AB9 /* MovieDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				DC94F0CF250893CE00CAF6B2 /* NewsController.swift */,
+				DC07620B250DFB6300181AB9 /* NewsDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,9 +194,11 @@
 				DC056D2A250BAA4100DA4D59 /* NetworkDataFetcher.swift in Sources */,
 				DC056D26250B975100DA4D59 /* Constants.swift in Sources */,
 				DC94F0D0250893CE00CAF6B2 /* NewsController.swift in Sources */,
+				DC07620C250DFB6300181AB9 /* NewsDetailController.swift in Sources */,
 				DC94F0CC250893CE00CAF6B2 /* AppDelegate.swift in Sources */,
 				DC603D89250CAF250056266D /* MovieData.swift in Sources */,
 				DC94F0E22509E04500CAF6B2 /* MovieCell.swift in Sources */,
+				DC07620E250DFE2500181AB9 /* MovieDetail.swift in Sources */,
 				DC056D28250BA4D900DA4D59 /* NetworkService.swift in Sources */,
 				DC056D2C250CAB3900DA4D59 /* Movie.swift in Sources */,
 			);
@@ -337,13 +345,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVX7856UA6;
+				DEVELOPMENT_TEAM = 44Y79RGYG9;
 				INFOPLIST_FILE = MovieNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmadigassymov.MovieNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madigassymov.MovieNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,13 +363,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVX7856UA6;
+				DEVELOPMENT_TEAM = 44Y79RGYG9;
 				INFOPLIST_FILE = MovieNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmadigassymov.MovieNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madigassymov.MovieNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

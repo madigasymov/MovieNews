@@ -6,7 +6,7 @@
 //  Copyright © 2020 Rustem Madigassymov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NetworkDataFetcher {
     
@@ -22,6 +22,14 @@ class NetworkDataFetcher {
             guard let data = data else { return }
             let response = try? decoder.decode(Page.self, from: data)
             completion(response)
+        }
+    }
+    
+    func fetchImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
+        networkService.request(urlString: urlString) { (data, error) in
+            guard let data = data else { return }
+            guard let image = UIImage(data: data) else { return }
+            completion(image)
         }
     }
 }

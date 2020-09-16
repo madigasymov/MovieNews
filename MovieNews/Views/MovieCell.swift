@@ -10,11 +10,20 @@ import UIKit
 
 class MovieCell: UICollectionViewCell {
     
+    private var networkDataFetcher = NetworkDataFetcher()
+    
     var movie: Movie? {
         didSet {
             guard let movie = movie else { return }
             titleLabel.text = movie.title
             dateLabel.text = movie.releaseDate
+            ratingLabel.text = String(format: "%.1f", movie.voteAverage)
+            let imageURL = Const.URL.imageURL + movie.backdropPath
+            networkDataFetcher.fetchImage(urlString: imageURL, completion: { (image) in
+                self.backdropImageView.image = image
+            })
+            starButton.isSelected = movie.isFavorite ? true : false
+            starButton.tintColor = starButton.isSelected ? Const.Color.yellow : .black
         }
     }
     
@@ -31,7 +40,7 @@ class MovieCell: UICollectionViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Some movie title"
+        label.text = ""
         label.textAlignment = .center
         label.textColor = .white
         label.numberOfLines = 2
@@ -42,7 +51,7 @@ class MovieCell: UICollectionViewCell {
     
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "2019-12-10"
+        label.text = ""
         label.textAlignment = .center
         label.textColor = .white
         label.numberOfLines = 1
@@ -53,7 +62,7 @@ class MovieCell: UICollectionViewCell {
     
     let ratingLabel: UILabel = {
         let label = UILabel()
-        label.text = "8.5"
+        label.text = ""
         label.textAlignment = .center
         label.textColor = .black
         label.numberOfLines = 1
@@ -71,7 +80,7 @@ class MovieCell: UICollectionViewCell {
         button.setImage(UIImage(systemName: "star.fill"), for: .selected)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 9, right: 7)
+        button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 6, right: 4)
         button.tintColor = .black
         button.backgroundColor = .white
         button.layer.cornerRadius = 24
@@ -94,18 +103,20 @@ class MovieCell: UICollectionViewCell {
         
         addSubview(backdropImageView)
         backdropImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        backdropImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        backdropImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        backdropImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        backdropImageView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         backdropImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
-        backdropImageView.image = UIImage(named: "sunset")
+        backdropImageView.image = UIImage(systemName: "film")
         
         addSubview(titleLabel)
         titleLabel.centerXAnchor.constraint(equalTo: backdropImageView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: backdropImageView.centerYAnchor).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: backdropImageView.widthAnchor).isActive = true
         
         addSubview(dateLabel)
         dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         dateLabel.centerXAnchor.constraint(equalTo: backdropImageView.centerXAnchor).isActive = true
+        dateLabel.widthAnchor.constraint(equalTo: backdropImageView.widthAnchor).isActive = true
         
         addSubview(ratingLabel)
         ratingLabel.topAnchor.constraint(equalTo: backdropImageView.topAnchor, constant: 20).isActive = true
@@ -118,6 +129,5 @@ class MovieCell: UICollectionViewCell {
         starButton.trailingAnchor.constraint(equalTo: backdropImageView.trailingAnchor, constant: -20).isActive = true
         starButton.widthAnchor.constraint(equalToConstant: 48).isActive = true
         starButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        
     }
 }
