@@ -20,9 +20,14 @@ class MovieDetail: UIView {
             dateLabel.text = movie.releaseDate
             ratingLabel.text = String(format: "%.1f", movie.voteAverage)
             let imageURL = Const.URL.imageURL + movie.backdropPath
-            networkDataFetcher.fetchImage(urlString: imageURL, completion: { (image) in
-                self.backdropImageView.image = image
-            })
+            if let cachedImage = imageCache.object(forKey: imageURL as NSString) {
+                backdropImageView.image = cachedImage as? UIImage
+            } else {
+                networkDataFetcher.fetchImage(urlString: imageURL, completion: { (image) in
+                    self.backdropImageView.image = image
+                    imageCache.setObject(image!, forKey: imageURL as NSString)
+                })
+            }
             starButton.isSelected = movie.isFavorite ? true : false
             starButton.tintColor = starButton.isSelected ? Const.Color.yellow : .black
         }
